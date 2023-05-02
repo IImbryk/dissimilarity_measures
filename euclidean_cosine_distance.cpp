@@ -3,6 +3,8 @@
 #include <algorithm>
 
 float euclidean_distance(float arr1[], float arr2[], int size) {
+    std::sort(arr1, arr1 + size);
+    std::sort(arr2, arr2 + size);
 
     float sum = 0.0;
     for (int i = 0; i < size; i++) {
@@ -13,6 +15,9 @@ float euclidean_distance(float arr1[], float arr2[], int size) {
 }
 
 float cosine_distance(float arr1[], float arr2[], int size) {
+    std::sort(arr1, arr1 + size);
+    std::sort(arr2, arr2 + size);
+    
     float dot_product = 0, norm1 = 0, norm2 = 0;
     
     for (int i = 0; i < size; i++) {
