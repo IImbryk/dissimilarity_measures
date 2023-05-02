@@ -27,15 +27,15 @@ double array_similarity(int arr1[], int arr2[], int n) {
 int main() {
     int arr1[] = {1, 2, 3, 4, 5, 1, 2, 3, 4, 5};
     int arr2[] = {4, 5, 8, 6, 10, 4, 5, 8, 6, 10};
-    int n = 10;
+    int size = sizeof(arr1) / sizeof(arr1[0]);
     
     auto start = high_resolution_clock::now();
-    double similarity = array_similarity(arr1, arr2, n);
+    double similarity = array_similarity(arr1, arr2, size);
     auto stop = high_resolution_clock::now();
     cout << "The similarity coefficient is " << similarity << endl;
     
     auto duration = duration_cast<microseconds>(stop - start);
-    cout << "1 Time taken by function: "
+    cout << "Time taken by function: "
          << duration.count() << " microseconds" << endl;
 
     return 0;
